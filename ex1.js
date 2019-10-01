@@ -116,12 +116,12 @@ console.log(lista)
 const arr = []
 let count = 1
 for (let i = 0; i < 5; i++){
-    const col = []
+    const linha = []
     for(let j = 0; j < 5; j++){
-        col[j] = count
+        linha[j] = count
         count ++
     }
-    arr[i] = col 
+    arr[i] = linha 
 }
 console.log(arr)
 
