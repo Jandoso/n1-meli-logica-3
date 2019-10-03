@@ -8,10 +8,28 @@
 // com pelo menos 4 propriedades e 1 método
 // ref: https://pt.wikipedia.org/wiki/Lista_de_Pok%C3%A9mon
 
+let pokemon = {
+    nome: "charmander",
+    nomeJapones: "hitokage",
+    nomeEvolucao: "charmilion",
+    tipo: "fogo",
+    
+}
+
+pokemon.ataque = function(){
+    console.log("Flame Blurst!")
+}
+
+let atacando = pokemon.ataque()
+
+console.log(pokemon, atacando)
+
 // 2.
 // Printe no console a seguinte
 // frase: "Oi, meu nome é  < >.
 // e meu nome japones é < >."
+
+console.log(`Oi, meu nome é ${pokemon.nome} e meu nome japonês é ${pokemon.nomeJapones}`)
 
 // 3.
 // Adicione uma nova propriedade ao
@@ -19,16 +37,39 @@
 // (ou algo do tipo) e defina
 // ela como `true` ou `false`.
 
+pokemon.sabe_voar = false
+
+console.log(pokemon)
+
 // 4.
 // Adicione um método ao seu pokemon
 // chamado `voar` que retorna "Desculpa, nao sei voar." ou "
 // To voaaaaaando!".
+
+pokemon.voando = function(sabe_voar){
+    if(pokemon.sabe_voar != true){
+        console.log('Desculpa, não sei voar!')
+    } else {
+        console.log('To voaaaaaaando caralha!')
+    }
+}
+
+console.log(pokemon.voando())
 
 // 5.
 // Adicione um método chamado
 // `action` ao seu pokemon
 // que retorna randomicamente uma
 // das Strings "FIGHT", "BAG" ou "RUN".
+
+let acoes = ["FIGHT", "BAG", "RUN"]
+
+pokemon.action = function(){
+    return acoes[Math.round((Math.random()*1000))%acoes.length];
+}
+
+console.log(pokemon.action())
+
 
 // 6.
 // Adicione um método chamado
@@ -37,14 +78,33 @@
 // retorna o resultado do metodo
 // `acao`.
 
+pokemon.pergunta = function(){
+    console.log(`O que o ${pokemon.nome} vai fazer? ` + pokemon.action())
+}
+
+console.log(pokemon.pergunta())
+
+
+
 // 7.
 // Printe todas as propriedades
 // do seu pokemon no console.
+
+console.log(Object.keys(pokemon));
 
 // 8.
 // Printe todas as propriedades
 // e seus respectivos valores no
 // console no seguinte formato:
 // <propriedade>: <valor
+
+
+
+
+for(var item in pokemon) {
+    console.log(item)
+}
+
+
 
 //9 Faça uma função construtora de pokemon
