@@ -70,7 +70,7 @@ pokemon.action()
 // `acao`.
 pokemon.ask = function() {
   console.log(`What will ${pokemon.name} do?`)
-  return pokemon.do_something
+  return pokemon.action
 }
 
 // 7.
